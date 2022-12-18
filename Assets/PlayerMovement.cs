@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     private Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -12,17 +13,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float jumpForce = 15f;
 
+
+
+
+
+    //Overhauled Mechanics
+
     
     private void Start()
     {
+        // Old Mechanics
+
         Debug.Log("Hello, World!"); 
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
-
+        
                 
     }
 
-    // Update is called once per frame
+
+    // Old Mechanics
     private void Update()
     {
         float xdirect = Input.GetAxisRaw("Horizontal");
@@ -39,4 +49,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+    
+
 }
