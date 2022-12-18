@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Platform
   - Cavern Walls
-  - 
+  - Item
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 3137223283
+    locked: 0
+  - name: Player
+    uniqueID: 3401267769
     locked: 0

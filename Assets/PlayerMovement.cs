@@ -6,12 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D rigbod;
-    
+    private BoxCollider2D coll;
+
+    [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float jumpForce = 15f;
+
     
     private void Start()
     {
         Debug.Log("Hello, World!"); 
         rigbod = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
+
                 
     }
 
@@ -19,13 +26,17 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float xdirect = Input.GetAxisRaw("Horizontal");
-        rigbod.velocity = new Vector2(xdirect * 8f, rigbod.velocity.y);
+        rigbod.velocity = new Vector2(xdirect * moveSpeed, rigbod.velocity.y);
 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rigbod.velocity = new Vector3(rigbod.velocity.x,  15f, 0);
+            rigbod.velocity = new Vector3(rigbod.velocity.x, jumpForce, 0);
         }
         
+    }
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
