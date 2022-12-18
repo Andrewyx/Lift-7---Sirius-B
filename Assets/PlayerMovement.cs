@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Rigidbody2D rigbod;
+    private Rigidbody2D rb;
     private BoxCollider2D coll;
 
     [SerializeField] private LayerMask jumpableGround;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Debug.Log("Hello, World!"); 
-        rigbod = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
 
                 
@@ -26,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float xdirect = Input.GetAxisRaw("Horizontal");
-        rigbod.velocity = new Vector2(xdirect * moveSpeed, rigbod.velocity.y);
+        rb.velocity = new Vector2(xdirect * moveSpeed, rb.velocity.y);
 
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rigbod.velocity = new Vector3(rigbod.velocity.x, jumpForce, 0);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
         
     }
