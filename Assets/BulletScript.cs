@@ -21,11 +21,25 @@ public class BulletScript : MonoBehaviour
         rb.velocity = new Vector3(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");     
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+
+        if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+        {
+            enemyComponent.TakeDamage(1);
+        }
+        Destroy(gameObject);   
+    }
+
     void Update()
     {
         
     }
+
 }
