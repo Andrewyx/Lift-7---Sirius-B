@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D rb;
     private BoxCollider2D coll;
+    private Animator anim;
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 8f;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Hello, World!"); 
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
         
                 
     }
@@ -44,6 +46,20 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
         
+        if (xdirect > 0f)
+        {
+            anim.SetBool("running_right", true);
+        }
+        else if (xdirect < 0f)
+        {
+            anim.SetBool("running_left", true);
+        }
+        else if (xdirect == 0)
+        {
+            anim.SetBool("running_right", false);
+            anim.SetBool("running_left", false);
+        }
+
     }
     private bool IsGrounded()
     {
