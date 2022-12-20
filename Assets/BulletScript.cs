@@ -31,7 +31,6 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
             //if (HitSound == null) Debug.LogError("HitSound is null on " + gameObject.name);
