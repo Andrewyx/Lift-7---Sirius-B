@@ -9,13 +9,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private Animator anim;
+    
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float jumpForce = 15f;
-
-
-
+    [SerializeField] private AudioSource JumpSoundEffect;
+    [SerializeField] private AudioSource WalkSoundEffect;
+    private bool canStep;
+    private float timer;
+    public float timeBetweenSteps;
 
 
     //Overhauled Mechanics
@@ -44,15 +47,30 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+            JumpSoundEffect.Play();
         }
         
-        if (xdirect > 0f)
+        if (!canStep)
+        {
+            timer += Time.deltaTime;
+            if(timer > timeBetweenSteps)
+            {
+                canStep = true;
+                timer = 0;
+            }
+        }        
+        
+        if (xdirect > 0f && IsGrounded() && canStep)
         {
             anim.SetBool("running_right", true);
+            WalkSoundEffect.Play();
+            canStep = false;
         }
-        else if (xdirect < 0f)
+        else if (xdirect < 0f && IsGrounded() && canStep)
         {
             anim.SetBool("running_left", true);
+            WalkSoundEffect.Play();
+            canStep = false;
         }
         else if (xdirect == 0)
         {
