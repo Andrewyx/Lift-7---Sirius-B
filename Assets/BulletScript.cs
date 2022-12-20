@@ -11,7 +11,11 @@ public class BulletScript : MonoBehaviour
     public float force;
     [SerializeField] private AudioSource HitSound;
     public GameObject bullet;
-        
+
+    private Vector2 screenBounds; //To delete offscreen bullets
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,8 @@ public class BulletScript : MonoBehaviour
         
         GameObject player = GameObject.FindGameObjectWithTag("Player");     
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //track screensize
     }
 
     // Update is called once per frame
@@ -42,6 +48,13 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.x < screenBounds.x * -2 || transform.position.x > screenBounds.x * 2){
+            Destroy(this.gameObject);
+        }
+        else if(transform.position.y < screenBounds.y * -2 ||transform.position.y > screenBounds.y * 2 )
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
