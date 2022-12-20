@@ -9,6 +9,8 @@ public class BulletScript : MonoBehaviour
     private Vector3 mousePos;
     private Rigidbody2D rb;
     public float force;
+    [SerializeField] private AudioSource HitSound;
+    public GameObject bullet;
         
     // Start is called before the first frame update
     void Start()
@@ -31,15 +33,15 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
+            //if (HitSound == null) Debug.LogError("HitSound is null on " + gameObject.name);
             enemyComponent.TakeDamage(1);
         }
-        Destroy(gameObject);   
+        Destroy(gameObject); 
     }
 
 
     void Update()
     {
-        
     }
 
 }

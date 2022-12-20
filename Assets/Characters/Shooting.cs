@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
     private Animator anim;
+    [SerializeField] private AudioSource ShootSoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class Shooting : MonoBehaviour
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            ShootSoundEffect.Play();
         }
     }
 }
