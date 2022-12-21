@@ -9,18 +9,12 @@ public class EngineHealth : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D rb;
 
-    public int maxHealth = 100;
-    public int currentHealth;
-
-    private float timer;
-    private bool canAttack; //Remove this later
-    private int isContact = 0;
-    public float iFrames;
-
+    public float maxHealth = 100;
+    public float currentHealth;
     public HealthBar healthBar;
 
-    
-    void Start()
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
@@ -29,38 +23,17 @@ public class EngineHealth : MonoBehaviour
 
     private void Update() 
     {
-        timer += Time.deltaTime;
-        if(timer > iFrames)
-        {
-            canAttack = true;
-            timer = 0;
-        }
-        if (isContact > 0 && canAttack)
-        {
-            EngineTakeDamage(1);
-        }   
     }
 
-    private void OnCollisionEnter2D(Collision2D coll) {
-        
-        if (coll.gameObject.CompareTag("Enemy") && canAttack)
-        {
-            isContact++;
-        }                    
-    }
-    private void OnCollisionExit2D(Collision2D coll) {
-        if (coll.gameObject.CompareTag("Enemy") && canAttack)
-        {
-            isContact--;
-        }      
-    }
-
-    private void EngineTakeDamage(int damage)
+    public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damage;
+        currentHealth -= damageAmount;
         healthBar.SetMaxHealth(currentHealth);
-        if (currentHealth <= 0)
+        if(currentHealth <= 0)
         {
+            //if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);
+            //Destroy(gameObject);
+            //DeathSound.Play();
             RestartLevel();
         }
     }

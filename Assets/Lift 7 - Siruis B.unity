@@ -3928,6 +3928,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1383998208}
     - target: {fileID: 4000830878484248439, guid: 11139f8fe99a65e45b8a7060b2dd7024, type: 3}
+      propertyPath: isContact
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000830878484248439, guid: 11139f8fe99a65e45b8a7060b2dd7024, type: 3}
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}

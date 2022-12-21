@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour
     public float force;
     [SerializeField] private AudioSource HitSound;
     public GameObject bullet;
+    public float regularBulletDamage = 1;
 
     private Vector2 screenBounds; //To delete offscreen bullets
 
@@ -40,7 +41,7 @@ public class BulletScript : MonoBehaviour
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
             //if (HitSound == null) Debug.LogError("HitSound is null on " + gameObject.name);
-            enemyComponent.TakeDamage(1);
+            enemyComponent.TakeDamage(regularBulletDamage);
         }
         Destroy(gameObject); 
     }
