@@ -14,6 +14,11 @@ public class Shooting : MonoBehaviour
     private Animator anim;
     [SerializeField] private AudioSource ShootSoundEffect;
 
+    [SerializeField] private GameObject chargedProjectile;
+    [SerializeField] private float chargeSpeed;
+    [SerializeField] private float chargeTime;
+    private bool isCharging;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +48,34 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             canFire = false;
+            chargeTime = 0;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             ShootSoundEffect.Play();
         }
+
+        if(Input.GetMouseButton(0) && chargeTime < 2)
+        {
+            isCharging = true;
+            if(isCharging == true)
+            {
+                chargeTime += Time.deltaTime * chargeSpeed;
+            }
+        }
+
+        else if(Input.GetMouseButton(0) && chargeTime >= 2 && canFire)
+        {
+            ReleaseCharge();
+        }
     }
+
+    void ReleaseCharge()
+        {
+            Instantiate(chargedProjectile, bulletTransform.position, Quaternion.identity);
+            isCharging = false;
+            chargeTime = 0;
+        }
+    
 }
