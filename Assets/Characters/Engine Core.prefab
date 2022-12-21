@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4000830878484248439}
   m_Layer: 0
   m_Name: Engine Core
-  m_TagString: Untagged
+  m_TagString: Engine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  iFrames: 1
-  healthBarObj: {fileID: 2762882225772933899, guid: 321d91e1ba8969c45b6ea8aaa701e0c6, type: 3}
   healthBar: {fileID: 2762882225772933892, guid: 321d91e1ba8969c45b6ea8aaa701e0c6, type: 3}

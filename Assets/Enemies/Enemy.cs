@@ -24,8 +24,8 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
            // if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);
+            DeathSound.Play();
             Destroy(gameObject);
-            //DeathSound.Play();
         }
     }
     // Update is called once per frame
