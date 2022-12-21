@@ -54,15 +54,8 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && canFire)
-        {
-            canFire = false;
-            chargeTime = 0;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-            ShootSoundEffect.Play();
-        }
 
-        if(Input.GetMouseButton(0) && chargeTime < 2 && canFire)
+        if(Input.GetMouseButton(0) && chargeTime < 2f && canFire)
         {
             isCharging = true;
             if(isCharging == true)
@@ -71,10 +64,23 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        else if(Input.GetMouseButton(0) && chargeTime >= 2 && canFire)
+        else if(Input.GetMouseButton(0) && chargeTime >= 2f && canFire)
         {
+            canFire = false;
             ReleaseCharge();
-        }
+            
+        }        
+
+        else if (Input.GetMouseButtonUp(0) && canFire)
+        {
+            canFire = false;
+            chargeTime = 0;
+            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            ShootSoundEffect.Play();
+        }     
+
+
+   
     }
 
     void ReleaseCharge()
@@ -84,6 +90,7 @@ public class Shooting : MonoBehaviour
             chargeTime = 0;
             canFire = false;
             ShootSoundEffect.Play();
+            timer = 0;
         }
     
 }

@@ -47,7 +47,7 @@ public class CameraShake : MonoBehaviour
 
     void StopShake()
     {
-        CancelInvoke("BeingShake");
+        CancelInvoke("BeginShake");
         mainCam.transform.localPosition = Vector3.zero;
     }
 }

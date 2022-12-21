@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     public bool isInRange;
-    public KeyCode interactKey
-    public UnityEvent ineractAction
+    public KeyCode interactKey;
+    public UnityEvent ineractAction;
     // Start is called before the first frame update
     void Start()
     {
