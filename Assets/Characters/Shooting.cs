@@ -11,14 +11,16 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
-    private Animator anim;
     [SerializeField] private AudioSource ShootSoundEffect;
+    [SerializeField] private GameObject chargedProjectile;
+    [SerializeField] private float chargeSpeed;
+    [SerializeField] private float chargeTime;
+    public bool isCharging;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,8 +32,17 @@ public class Shooting : MonoBehaviour
 
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
-        
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        transform.rotation = Quaternion.Euler(0, 0, rotZ + 90);
+
+        if (rotZ + 90 > 0 && rotZ + 90 < 180)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
+        if (rotZ + 90 < 0 && rotZ + 90 > -180)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
 
         if (!canFire)
         {
@@ -43,11 +54,36 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             canFire = false;
+            chargeTime = 0;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             ShootSoundEffect.Play();
         }
+
+        if(Input.GetMouseButton(0) && chargeTime < 2 && canFire)
+        {
+            isCharging = true;
+            if(isCharging == true)
+            {
+                chargeTime += Time.deltaTime * chargeSpeed;
+            }
+        }
+
+        else if(Input.GetMouseButton(0) && chargeTime >= 2 && canFire)
+        {
+            ReleaseCharge();
+        }
     }
+
+    void ReleaseCharge()
+        {
+            Instantiate(chargedProjectile, bulletTransform.position, Quaternion.identity);
+            isCharging = false;
+            chargeTime = 0;
+            canFire = false;
+            ShootSoundEffect.Play();
+        }
+    
 }
