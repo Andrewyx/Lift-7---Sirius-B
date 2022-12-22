@@ -798,7 +798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582870131}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488bf79117d15014ebe4550f6e5957ce, type: 3}
   m_Name: 
@@ -1819,6 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8cf85f886539a48a27e1b1fa5f9137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!82 &691537478
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2783,6 +2784,9 @@ MonoBehaviour:
   chargeSpeed: 3
   chargeTime: 1
   isCharging: 0
+  player: {fileID: 691537469}
+  smallRecoilForce: 40
+  bigRecoilForce: 80
 --- !u!82 &1419314223
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4342,6 +4346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3246124772013616927, guid: 46e0f04f45b48f9478ec9b1dc35a44a9, type: 3}
+      propertyPath: m_Volume
+      value: 0.136
+      objectReference: {fileID: 0}
     - target: {fileID: 3246124772013616927, guid: 46e0f04f45b48f9478ec9b1dc35a44a9, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0

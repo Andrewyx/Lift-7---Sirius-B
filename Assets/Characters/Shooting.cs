@@ -17,21 +17,29 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float chargeTime;
     public bool isCharging;
 
+    private Rigidbody2D rb;
+    public GameObject player;
+    
+    public float smallRecoilForce = 5;
+    public float bigRecoilForce = 10;
+    
+    void Awake()
+    {
+        rb = player.GetComponent<Rigidbody2D>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-
         Vector3 rotation = mousePos - transform.position;
-
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(0, 0, rotZ + 90);
 
         if (rotZ + 90 > 0 && rotZ + 90 < 180)
@@ -68,6 +76,8 @@ public class Shooting : MonoBehaviour
         {
             canFire = false;
             ReleaseCharge();
+            rb.AddForce(rotation.normalized * -bigRecoilForce, ForceMode2D.Impulse);
+
             
         }        
 
@@ -77,6 +87,7 @@ public class Shooting : MonoBehaviour
             chargeTime = 0;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             ShootSoundEffect.Play();
+            rb.AddForce(rotation.normalized * -smallRecoilForce, ForceMode2D.Impulse);
         }     
 
 

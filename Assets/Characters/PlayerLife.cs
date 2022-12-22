@@ -26,7 +26,7 @@ public class PlayerLife : MonoBehaviour
         if(transform.position.x < screenBounds.x * -2 || transform.position.x > screenBounds.x * 2){
             RestartLevel();
         }
-        else if(transform.position.y < screenBounds.y * -2 ||transform.position.y > screenBounds.y * 2 )
+        else if(transform.position.y < screenBounds.y * -2)
         {
             RestartLevel();
         }        

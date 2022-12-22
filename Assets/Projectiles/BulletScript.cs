@@ -15,6 +15,9 @@ public class BulletScript : MonoBehaviour
 
     private Vector2 screenBounds; //To delete offscreen bullets
 
+    public GameObject player;
+
+
 
 
     // Start is called before the first frame update
@@ -43,7 +46,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
-            HitSound.Play();
+            //HitSound.Play();
             enemyComponent.TakeDamage(regularBulletDamage);
         }
         Destroy(gameObject); 
