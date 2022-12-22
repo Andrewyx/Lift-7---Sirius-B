@@ -17,9 +17,6 @@ public class BulletScript : MonoBehaviour
 
     public GameObject player;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +45,7 @@ public class BulletScript : MonoBehaviour
         {
             //HitSound.Play();
             enemyComponent.TakeDamage(regularBulletDamage);
+            CinemachineShake.Instance.ShakeCameraSharp(2f, 0.1f);
         }
         Destroy(gameObject); 
     }
