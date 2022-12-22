@@ -389,9 +389,10 @@ public class PlayerMovementFluid : MonoBehaviour
 	private void Turn()
 	{
 		//stores scale and flips the player along the x axis, 
-		Vector3 scale = transform.localScale; 
-		scale.x *= -1;
-		transform.localScale = scale;
+		//Vector3 scale = transform.localScale; 
+		//scale.x *= -1;
+		//transform.localScale = scale;
+		transform.Rotate(0f, 180f, 0f);
 
 		IsFacingRight = !IsFacingRight;
 	}

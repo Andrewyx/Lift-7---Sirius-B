@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     
 
     [SerializeField] private LayerMask jumpableGround;
-    [SerializeField] private float moveSpeed = 8f;
-    [SerializeField] private float jumpForce = 15f;
+    //[SerializeField] private float moveSpeed = 8f;
+    //[SerializeField] private float jumpForce = 15f;
     [SerializeField] private AudioSource JumpSoundEffect;
     [SerializeField] private AudioSource WalkSoundEffect;
     private bool canStep;
@@ -41,12 +41,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float xdirect = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(xdirect * moveSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(xdirect * moveSpeed, rb.velocity.y);
 
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+            //rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
             JumpSoundEffect.Play();
         }
         
