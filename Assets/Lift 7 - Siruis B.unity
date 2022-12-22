@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 691537479}
   - component: {fileID: 691537478}
   - component: {fileID: 691537480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2271,7 +2271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846284463}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2393,7 +2393,7 @@ GameObject:
   - component: {fileID: 978078570}
   - component: {fileID: 978078571}
   - component: {fileID: 978078572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2791,7 +2791,7 @@ GameObject:
   - component: {fileID: 1419314221}
   - component: {fileID: 1419314222}
   - component: {fileID: 1419314223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2945,7 +2945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448673853}
   - component: {fileID: 1448673854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,6 +3096,7 @@ GameObject:
   - component: {fileID: 1562543221}
   - component: {fileID: 1562543220}
   - component: {fileID: 1562543219}
+  - component: {fileID: 1562543222}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3169,6 +3170,19 @@ Transform:
   m_Father: {fileID: 1418171504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562543222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562543218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4f017247c012c43a2b0d8717e277e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
 --- !u!1 &1601092099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,7 +3434,7 @@ GameObject:
   - component: {fileID: 1658178581}
   - component: {fileID: 1658178583}
   - component: {fileID: 1658178582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3877,7 +3891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698328946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Player
   m_Icon: {fileID: 0}
