@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c131d1b143ec604e89cd6c73a8a98bf
+guid: 01bb8419424366344a452c983ce03b8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -117,12 +117,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_0
+      name: Worm Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd20bfce7d72c334fa4751a8926a676c
+      internalID: -2051756558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a905c38df5b4d7041829c6b2c728756e
+      internalID: 419594612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm Sprite Sheet_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 128
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,134 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 209608ec7d008214c8986e2f8485cabe
-      internalID: 72358016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1cd969a554be6a4f97f8914c52e902b
-      internalID: 1069640274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9d9e1c513b6ee3469570171081b9c1b
-      internalID: -904991604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48a93efe147c11942a8bacbc4927d05c
-      internalID: -1928331430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0599c5e12a6537141a001bd72f8089ac
-      internalID: -1710131539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ee126186286cd24ea1763e798b21bda
-      internalID: -1588817142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dwarf_Death_Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a529bc5d57033941b9a62a223be89ab
-      internalID: 955978477
+      spriteID: bf713b27ad5f2d142acf23f0ed4dc227
+      internalID: 1542772729
       vertices: []
       indices: 
       edges: []
@@ -274,13 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dwarf_Death_Spritesheet_4: 1699594594
-      Dwarf_Death_Spritesheet_1: -1931223656
-      Dwarf_Death_Spritesheet_5: 1189399536
-      Dwarf_Death_Spritesheet_6: 1069640274
-      Dwarf_Death_Spritesheet_2: 1351096773
-      Dwarf_Death_Spritesheet_3: -1464479458
-      Dwarf_Death_Spritesheet_0: 72358016
+      Worm Sprite Sheet_1: 419594612
+      Worm Sprite Sheet_2: 1542772729
+      Worm Sprite Sheet_0: -2051756558
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

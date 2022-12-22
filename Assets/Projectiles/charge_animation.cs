@@ -29,4 +29,8 @@ public class charge_animation : MonoBehaviour
             anim.SetBool("charge_shot", false);
     }
 
+    public void getDestroyed()
+    {
+        GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
+    }
 }

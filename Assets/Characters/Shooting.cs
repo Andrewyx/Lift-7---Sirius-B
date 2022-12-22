@@ -103,5 +103,6 @@ public class Shooting : MonoBehaviour
             ShootSoundEffect.Play();
             timer = 0;
         }
+
     
 }
