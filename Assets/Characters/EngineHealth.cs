@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EngineHealth : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class EngineHealth : MonoBehaviour
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");     
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
      
     }
 
@@ -34,7 +34,7 @@ public class EngineHealth : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-        healthBar.SetMaxHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
         if(currentHealth <= 0)
         {
             //if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);

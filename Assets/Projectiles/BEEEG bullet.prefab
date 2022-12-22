@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7539884406404366603}
   - component: {fileID: 8965995218301379859}
   - component: {fileID: 173930204837531658}
+  - component: {fileID: -6723994194795133390}
   m_Layer: 0
   m_Name: BEEEG bullet
   m_TagString: Untagged
@@ -103,6 +104,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   bullet: {fileID: 0}
   regularBulletDamage: 3
+  player: {fileID: 0}
 --- !u!50 &8965995218301379859
 Rigidbody2D:
   serializedVersion: 4
@@ -140,3 +142,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.53, y: 0.34}
   m_Direction: 1
+--- !u!114 &-6723994194795133390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914560693484837480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2726c9d6d7055d4cb69fbd6d0f60deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

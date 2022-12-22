@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2597404498552465563}
   - component: {fileID: 223907828931867682}
   - component: {fileID: 6897178693108893592}
-  m_Layer: 0
+  - component: {fileID: 40648739816302045}
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +123,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.32, y: 2.18}
   m_Direction: 0
+--- !u!114 &40648739816302045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441576709905424641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2726c9d6d7055d4cb69fbd6d0f60deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7638331543393437794
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +151,7 @@ GameObject:
   - component: {fileID: 4818008788395134911}
   - component: {fileID: 7798937063893134401}
   - component: {fileID: 6038600323494316979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock Crawler
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -193,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 2784567519686208147, guid: 11139f8fe99a65e45b8a7060b2dd7024, type: 3}
+  target: {fileID: 2076468771117731409, guid: 973d738ad5a7c9742a9bcc0f1f321dbb, type: 3}
 --- !u!114 &8152851060364739715
 MonoBehaviour:
   m_ObjectHideFlags: 0
