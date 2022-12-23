@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float currentHealth, maxHealth = 3f;
@@ -10,23 +11,33 @@ public class Enemy : MonoBehaviour
     public float damageToEngine = 2;
     public float damageToPlayer = 1;
     public float timer;
+    public GameObject deathParticles;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         timer = Time.deltaTime;
-                
     }
+
     public void TakeDamage(float damageAmount) //Paste this function and all its variables into anything that can TAKE DAMAGE
     {
         currentHealth -= damageAmount;
+        GetComponent<ParticleSystem>().Play();
         if(currentHealth <= 0)
         {
            // if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);
             DeathSound.Play();
-            Destroy(gameObject);
+            GetComponent<ParticleSystem>().Play();
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
+            DestroyFunction();
         }
+    }
+
+    public void DestroyFunction()
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+        //Destroy(gameObject);
     }
     // Update is called once per frame
 

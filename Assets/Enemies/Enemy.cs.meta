@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - DeathSound: {fileID: 1148113691424502022, guid: 014596a3296d161478cfc67451175939, type: 3}
+  - deathParticles: {fileID: 4872872470442824948, guid: 228b046bd94d7c041907ef4bfad0f2a2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
