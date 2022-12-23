@@ -67,14 +67,14 @@ public class PlayerLife : MonoBehaviour
 
             else
             {
-                hearts[i].color = Color.black;
+                hearts[i].color = Color.grey;
             }
         }
     }
 
     private void RestartLevel()
     {  
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(5);
     }
 }
 
