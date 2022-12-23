@@ -14,8 +14,6 @@ public class EngineHealth : MonoBehaviour
     public float currentHealth;
     public HealthBar healthBar;
 
-
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,7 +44,9 @@ public class EngineHealth : MonoBehaviour
 
     private void RestartLevel()
     {  
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(6);
+    
     }
 }
 

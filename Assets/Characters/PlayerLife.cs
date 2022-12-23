@@ -74,7 +74,7 @@ public class PlayerLife : MonoBehaviour
 
     private void RestartLevel()
     {  
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 }
 
