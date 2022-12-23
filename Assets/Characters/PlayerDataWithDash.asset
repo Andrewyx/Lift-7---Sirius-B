@@ -40,7 +40,7 @@ MonoBehaviour:
   doTurnOnWallJump: 0
   slideSpeed: 0.1
   slideAccel: 0.1
-  coyoteTime: 0.18
+  coyoteTime: 0.07
   jumpInputBufferTime: 0.092
   dashAmount: 0
   dashSpeed: 0
