@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class RetryScript : MonoBehaviour
 {
-    public void RetryGame() 
+    public float timer;
+
+    void Update()
     {
-        SceneManager.LoadScene(1);
+        timer += Time.deltaTime;
+    }
+    
+    public void RetryGame()
+    {
+        if (timer > 2)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
+
