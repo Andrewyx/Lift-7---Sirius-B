@@ -28,8 +28,6 @@ public class Enemy : MonoBehaviour
         {
            // if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);
             DeathSound.Play();
-            GetComponent<ParticleSystem>().Play();
-            Instantiate(deathParticles, transform.position, Quaternion.identity);
             DestroyFunction();
         }
     }
@@ -37,7 +35,7 @@ public class Enemy : MonoBehaviour
     public void DestroyFunction()
     {
         Instantiate(deathParticles, transform.position, Quaternion.identity);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
     // Update is called once per frame
 
