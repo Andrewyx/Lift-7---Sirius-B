@@ -17,9 +17,11 @@ public class Depth : MonoBehaviour
     public bool hasLimit;
     public float depthLimit;
 
+    public MoveToNextLevel moveToNextLevel;
+    
     void Start()
     {
-
+        moveToNextLevel = GetComponent<MoveToNextLevel>();
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class Depth : MonoBehaviour
             currentDepth = depthLimit;
             SetDepthText();
             enabled = false;
+            moveToNextLevel.NextLevel();          
         }
 
         SetDepthText();
