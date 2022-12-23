@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 104009144}
   - component: {fileID: 104009146}
   - component: {fileID: 104009145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,6 +1148,8 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7638331543393437794, guid: 2ee3bc8c3759a0848b27bda3dfd60fd1, type: 3}
     cost: 1
   - enemyPrefab: {fileID: 7638331543393437794, guid: 03adade641c246443901166b81a25fbb, type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 7638331543393437794, guid: 7d40fd913a8a3f248846d48f126d4a08, type: 3}
     cost: 1
   currWave: 1
   waveValue: 5
@@ -2381,7 +2383,7 @@ GameObject:
   - component: {fileID: 987364704}
   - component: {fileID: 987364706}
   - component: {fileID: 987364705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1043763556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,7 +2626,7 @@ GameObject:
   - component: {fileID: 1112591085}
   - component: {fileID: 1112591087}
   - component: {fileID: 1112591086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background Cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2684,8 +2686,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1157744013
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2884,16 +2886,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
@@ -2906,8 +2898,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d297e66a8920bf34db81e047cccf17b2, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4a0489f7e9a7983438aa4645805213a4, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: fa297f6fef28a764fac84a51dc87ffb5, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 1511747166, guid: ed39c829a30c3344ea44b13aa3ee2d3d, type: 3}
@@ -2919,10 +2911,10 @@ Tilemap:
     m_Data: {fileID: -936912309, guid: ed39c829a30c3344ea44b13aa3ee2d3d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1111647857, guid: ed39c829a30c3344ea44b13aa3ee2d3d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -146148391, guid: ed39c829a30c3344ea44b13aa3ee2d3d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 19
+  - m_RefCount: 18
     m_Data:
       e00: 1
       e01: 0
@@ -2941,7 +2933,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 19
+  - m_RefCount: 18
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3801,7 +3793,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1157744013
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
