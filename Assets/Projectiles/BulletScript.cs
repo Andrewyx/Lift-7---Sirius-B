@@ -32,8 +32,8 @@ public class BulletScript : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");     
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
-        GameObject engine = GameObject.FindGameObjectWithTag("Engine");     
-        Physics2D.IgnoreCollision(engine.GetComponent<Collider2D>(), GetComponent<Collider2D>());           
+        //GameObject engine = GameObject.FindGameObjectWithTag("Engine");     
+        //Physics2D.IgnoreCollision(engine.GetComponent<Collider2D>(), GetComponent<Collider2D>());           
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //track screensize
     }
