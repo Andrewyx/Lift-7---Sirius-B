@@ -43,7 +43,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
-            //HitSound.Play();
+            HitSound.Play();
             enemyComponent.TakeDamage(regularBulletDamage);
             CinemachineShake.Instance.ShakeCameraSharp(2f, 0.1f);
         }
