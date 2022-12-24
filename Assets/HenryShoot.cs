@@ -6,8 +6,7 @@ public class HenryShoot : MonoBehaviour
 {
     public GameObject diamondShot;
     public Transform diamondPos;
-
-
+    public float shootRate = 0.5f;
     private float timer;
     
     // Start is called before the first frame update
@@ -20,7 +19,7 @@ public class HenryShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 0.5f)
+        if(timer > shootRate)
         {
             timer = 0;
             shootDiamond();

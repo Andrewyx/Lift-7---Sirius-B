@@ -26,9 +26,13 @@ public class DiamondShotScript : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //track screensize
         
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");     
-        Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());    
+        Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());   
+
+        GameObject platform = GameObject.FindGameObjectWithTag("Platform");     
+        Physics2D.IgnoreCollision(platform.GetComponent<Collider2D>(), GetComponent<Collider2D>());              
     }
 
+    
     // Update is called once per frame
     void Update()
     {
