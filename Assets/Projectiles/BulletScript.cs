@@ -9,8 +9,8 @@ public class BulletScript : MonoBehaviour
     private Vector3 mousePos;
     private Rigidbody2D rb;
     public float force;
-    [SerializeField] private AudioSource HitSound;
-    public GameObject bullet;
+    
+    public GameObject enemyHitSound;
     public float regularBulletDamage = 1;
 
     private Vector2 screenBounds; //To delete offscreen bullets
@@ -43,7 +43,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
-            HitSound.Play();
+            Instantiate(enemyHitSound, transform.position, Quaternion.identity);
             enemyComponent.TakeDamage(regularBulletDamage);
             CinemachineShake.Instance.ShakeCameraSharp(2f, 0.1f);
         }
@@ -53,10 +53,10 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.x < screenBounds.x * -2 || transform.position.x > screenBounds.x * 2){
+        if(transform.position.x < screenBounds.x * -5 || transform.position.x > screenBounds.x * 5){
             Destroy(this.gameObject);
         }
-        else if(transform.position.y < screenBounds.y * -2 ||transform.position.y > screenBounds.y * 2 )
+        else if(transform.position.y < screenBounds.y * -5 ||transform.position.y > screenBounds.y * 5)
         {
             Destroy(this.gameObject);
         }

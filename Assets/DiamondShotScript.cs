@@ -33,10 +33,10 @@ public class DiamondShotScript : MonoBehaviour
     void Update()
     {
         
-        if(transform.position.x < screenBounds.x * -2 || transform.position.x > screenBounds.x * 2){
+        if(transform.position.x < screenBounds.x * -5 || transform.position.x > screenBounds.x * 5){
             Destroy(this.gameObject);
         }
-        else if(transform.position.y < screenBounds.y * -2 ||transform.position.y > screenBounds.y * 2 )
+        else if(transform.position.y < screenBounds.y * -5 ||transform.position.y > screenBounds.y * 5 )
         {
             Destroy(this.gameObject);
         }        

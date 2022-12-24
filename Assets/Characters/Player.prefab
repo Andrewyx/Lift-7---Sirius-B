@@ -402,7 +402,7 @@ MonoBehaviour:
   bulletTransform: {fileID: 897536219231708449}
   canFire: 0
   timeBetweenFiring: 0.25
-  ShootSoundEffect: {fileID: 0}
+  ShootSoundEffect: {fileID: 897536219269456691}
   chargedProjectile: {fileID: 7914560693484837480, guid: 1b2e9bcd0c7ba994ba01dc675eb1fcb7, type: 3}
   chargeSpeed: 3
   chargeTime: 1
