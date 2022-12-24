@@ -197,7 +197,7 @@ MonoBehaviour:
   damageToEngine: 2
   damageToPlayer: 1
   timer: 0
-  deathParticles: {fileID: 312107743012377680, guid: 5eb0ffb724b89304ba2fd7d1e74e684b, type: 3}
+  deathParticles: {fileID: 365948536824192524, guid: 1254a6379e2e2ef4dbc036454dbae1cf, type: 3}
 --- !u!114 &8255233687358836834
 MonoBehaviour:
   m_ObjectHideFlags: 0
