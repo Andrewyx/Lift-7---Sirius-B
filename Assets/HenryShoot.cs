@@ -20,7 +20,7 @@ public class HenryShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 2)
+        if(timer > 0.5f)
         {
             timer = 0;
             shootDiamond();

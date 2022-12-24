@@ -24,7 +24,7 @@ public class Depth : MonoBehaviour
         moveToNextLevel = GetComponent<MoveToNextLevel>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         currentDepth = countDown ? currentDepth -= countSpeed : currentDepth += countSpeed;
 

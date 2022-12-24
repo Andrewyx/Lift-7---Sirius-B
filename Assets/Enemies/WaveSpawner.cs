@@ -6,7 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public List<EnemyClass> enemies = new List<EnemyClass>();
     public int currWave;
-    public int waveValue;
+    private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
     public Transform spawnLocation;
@@ -48,7 +48,8 @@ public class WaveSpawner : MonoBehaviour
                 {
                     spawnLocation.position = new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * randPos(), 0);
                     randbool = Random.value < 0.5f;
-                }             
+                }     
+
 
                 Instantiate(enemiesToSpawn[0], spawnLocation.position, Quaternion.identity);
                 

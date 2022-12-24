@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 3
+  maxHealth: 5
   DeathSound: {fileID: 7798937063893134401}
   secondsPerAttack: 4
   damageToEngine: 2
@@ -519,7 +519,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2.3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
