@@ -28,6 +28,7 @@ MonoBehaviour:
   doConserveMomentum: 1
   jumpHeight: 3.5
   jumpTimeToApex: 0.35
+  airJumps: 1
   jumpForce: 20
   jumpCutGravityMult: 1
   jumpHangGravityMult: 0.2
@@ -42,8 +43,8 @@ MonoBehaviour:
   slideAccel: 0.1
   coyoteTime: 0.07
   jumpInputBufferTime: 0.092
-  dashAmount: 0
-  dashSpeed: 0
+  dashAmount: 1
+  dashSpeed: 30
   dashSleepTime: 0
   dashAttackTime: 0
   dashEndTime: 0

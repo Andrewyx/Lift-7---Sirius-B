@@ -38,6 +38,7 @@ public class PlayerMovementFluid : MonoBehaviour
 	//Jump
 	private bool _isJumpCut;
 	private bool _isJumpFalling;
+	private int _bonusJumpsLeft;
 
 	//Wall Jump
 	private float _wallJumpStartTime;
@@ -162,6 +163,7 @@ public class PlayerMovementFluid : MonoBehaviour
 		if (LastOnGroundTime > 0 && !IsJumping && !IsWallJumping)
         {
 			_isJumpCut = false;
+			_bonusJumpsLeft = Data.airJumps;
 
 			if(!IsJumping)
 				_isJumpFalling = false;
@@ -190,6 +192,20 @@ public class PlayerMovementFluid : MonoBehaviour
 				_lastWallJumpDir = (LastOnWallRightTime > 0) ? -1 : 1;
 
 				WallJump(_lastWallJumpDir);
+			}
+
+			else if (LastPressedJumpTime > 0 && _bonusJumpsLeft > 0)
+			{
+				IsJumping = true;
+				IsWallJumping = false;
+				_isJumpCut = false;
+				_isJumpFalling = false;
+
+				_bonusJumpsLeft--;
+
+				Jump();
+
+				//AnimHandler.startedJumping = true;
 			}
 		}
 		#endregion
