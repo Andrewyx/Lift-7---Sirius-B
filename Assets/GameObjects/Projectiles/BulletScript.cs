@@ -29,12 +29,6 @@ public class BulletScript : MonoBehaviour
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
         
-        GameObject player = GameObject.FindGameObjectWithTag("Player");     
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
-        //GameObject engine = GameObject.FindGameObjectWithTag("Engine");     
-        //Physics2D.IgnoreCollision(engine.GetComponent<Collider2D>(), GetComponent<Collider2D>());           
-
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //track screensize
     }
 

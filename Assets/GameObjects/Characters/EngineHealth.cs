@@ -20,9 +20,6 @@ public class EngineHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");     
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-     
     }
 
     private void Update() 
