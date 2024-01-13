@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a405e0e60e0314bbfaa1eca45ce9e2, type: 3}
   m_Name: PlayerDataWithDash
   m_EditorClassIdentifier: 
-  gravityStrength: -57.14286
-  gravityScale: 5.82496
+  gravityStrength: -38.888885
+  gravityScale: 3.9642084
   fallGravityMult: 1.5
-  maxFallSpeed: 12
+  maxFallSpeed: 13
   fastFallGravityMult: 1.5
   maxFastFallSpeed: 30
-  runMaxSpeed: 17.5
-  runAcceleration: 2
-  runAccelAmount: 5.714286
+  runMaxSpeed: 15
+  runAcceleration: 1.25
+  runAccelAmount: 4.1666665
   runDecceleration: 2
-  runDeccelAmount: 5.714286
+  runDeccelAmount: 6.6666665
   accelInAir: 0.5
   deccelInAir: 0.646
   doConserveMomentum: 1
-  jumpHeight: 3.5
-  jumpTimeToApex: 0.35
+  jumpHeight: 1.75
+  jumpTimeToApex: 0.3
   airJumps: 1
-  jumpForce: 20
+  jumpForce: 11.666666
   jumpCutGravityMult: 1
   jumpHangGravityMult: 0.2
   jumpHangTimeThreshold: 0
