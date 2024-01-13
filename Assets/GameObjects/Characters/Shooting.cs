@@ -76,7 +76,7 @@ public class Shooting : MonoBehaviour
         {
             canFire = false;
             ReleaseCharge();
-            rb.AddForce(rotation.normalized * -bigRecoilForce, ForceMode2D.Impulse);
+            rb.AddForce(rotation.normalized * -bigRecoilForce / 8, ForceMode2D.Impulse);
 
             
         }        
@@ -87,7 +87,7 @@ public class Shooting : MonoBehaviour
             chargeTime = 0;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             ShootSoundEffect.Play();
-            rb.AddForce(rotation.normalized * -smallRecoilForce, ForceMode2D.Impulse);
+            rb.AddForce(rotation.normalized * -smallRecoilForce / 8, ForceMode2D.Impulse);
         }     
 
 
