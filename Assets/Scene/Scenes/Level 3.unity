@@ -1604,7 +1604,6 @@ GameObject:
   - component: {fileID: 612706995}
   - component: {fileID: 612706994}
   - component: {fileID: 612706993}
-  - component: {fileID: 612706998}
   m_Layer: 6
   m_Name: Elevator
   m_TagString: Platform
@@ -2488,18 +2487,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &612706998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612706991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa77103659dc1954f9a56f714e890b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &682819824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4293597399624972114, guid: b25f776fbd0f113479e44f889cdb7b71, type: 3}
@@ -4840,7 +4827,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4959,8 +4946,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 200
-      minScalar: 100
+      scalar: 50
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10075,8 +10062,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.039249957, y: 0.71320003, z: 0}
-    m_Extent: {x: 1.5848501, y: 2.1938, z: 0}
+    m_Center: {x: 0.03825003, y: 0.71299994, z: 0}
+    m_Extent: {x: 1.58465, y: 2.1943998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10242,8 +10229,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.028599977, y: 0.69635, z: 0}
-    m_Extent: {x: 1.613, y: 2.2105498, z: 0}
+    m_Center: {x: -0.027999997, y: 0.69600004, z: 0}
+    m_Extent: {x: 1.6141, y: 2.2115, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

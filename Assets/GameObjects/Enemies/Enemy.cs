@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float timer;
     public GameObject deathParticles;
     public GameObject gibsLocation = null;
+    public GameObject ParentGameObject = null;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
         if (gibsLocation != null)
         {
             Instantiate(deathParticles, gibsLocation.transform.position, Quaternion.identity);
+            Destroy(ParentGameObject);
         }
         else
         {
