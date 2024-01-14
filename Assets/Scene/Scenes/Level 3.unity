@@ -10062,8 +10062,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.03825003, y: 0.71299994, z: 0}
-    m_Extent: {x: 1.58465, y: 2.1943998, z: 0}
+    m_Center: {x: 0.039349973, y: 0.7132499, z: 0}
+    m_Extent: {x: 1.5841501, y: 2.19485, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10229,8 +10229,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.027999997, y: 0.69600004, z: 0}
-    m_Extent: {x: 1.6141, y: 2.2115, z: 0}
+    m_Center: {x: -0.028050005, y: 0.69584996, z: 0}
+    m_Extent: {x: 1.61395, y: 2.21125, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18455,6 +18455,10 @@ PrefabInstance:
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 365948536824192524, guid: 819a4bdd05482834a9f6497138b9184c, type: 3}
+    - target: {fileID: 7411145064216834308, guid: b25f776fbd0f113479e44f889cdb7b71, type: 3}
+      propertyPath: ParentGameObject
+      value: 
+      objectReference: {fileID: 39260517}
     - target: {fileID: 8714547287239503544, guid: b25f776fbd0f113479e44f889cdb7b71, type: 3}
       propertyPath: shootRate
       value: 2.5
