@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    
+
     private Camera mainCam;
     private Vector3 mousePos;
     private Rigidbody2D rb;
     public float force;
-    
+
     public GameObject enemyHitSound;
     public float regularBulletDamage = 1;
 
@@ -28,29 +28,30 @@ public class BulletScript : MonoBehaviour
         rb.velocity = new Vector3(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
-        
+
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //track screensize
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision) 
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
             Instantiate(enemyHitSound, transform.position, Quaternion.identity);
             enemyComponent.TakeDamage(regularBulletDamage);
             CinemachineShake.Instance.ShakeCameraSharp(2f, 0.1f);
         }
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 
 
     void Update()
     {
-        if(transform.position.x < screenBounds.x * -5 || transform.position.x > screenBounds.x * 5){
+        if (transform.position.x < (-100f) || transform.position.x > 100f)
+        {
             Destroy(this.gameObject);
         }
-        else if(transform.position.y < screenBounds.y * -5 ||transform.position.y > screenBounds.y * 5)
+        else if (transform.position.y < (-100f) || transform.position.y > 100f)
         {
             Destroy(this.gameObject);
         }
