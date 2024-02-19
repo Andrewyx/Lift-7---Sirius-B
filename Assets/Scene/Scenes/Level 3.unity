@@ -25014,7 +25014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411145064216834308, guid: b25f776fbd0f113479e44f889cdb7b71, type: 3}
       propertyPath: maxHealth
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7411145064216834308, guid: b25f776fbd0f113479e44f889cdb7b71, type: 3}
       propertyPath: gibsLocation
