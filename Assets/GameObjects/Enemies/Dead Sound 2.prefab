@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1148113691424502022}
   - component: {fileID: -3649444899085074422}
   m_Layer: 0
-  m_Name: Dead Sound
+  m_Name: Dead Sound 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d780ecd8b92b9c40ab73aa118f624d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 461c75de4bf167a4688657a9c4bd432f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.464
+  m_Volume: 0.169
   m_Pitch: 1
   Loop: 0
   Mute: 0

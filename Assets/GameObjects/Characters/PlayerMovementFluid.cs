@@ -50,6 +50,9 @@ public class PlayerMovementFluid : MonoBehaviour
 	private Vector2 _lastDashDir;
 	private bool _isDashAttacking;
 
+	//Animations
+	private Animator walkingAnimation;
+
 	#endregion
 
 	#region INPUT PARAMETERS
@@ -85,6 +88,7 @@ public class PlayerMovementFluid : MonoBehaviour
 	{
 		SetGravityScale(Data.gravityScale);
 		IsFacingRight = true;
+		walkingAnimation = GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -103,8 +107,13 @@ public class PlayerMovementFluid : MonoBehaviour
 		_moveInput.x = Input.GetAxisRaw("Horizontal");
 		_moveInput.y = Input.GetAxisRaw("Vertical");
 
-		if (_moveInput.x != 0)
+		if (_moveInput.x != 0) {
 			CheckDirectionToFace(_moveInput.x > 0);
+		} else {
+			walkingAnimation.SetBool("running_left", false);
+			walkingAnimation.SetBool("running_right", false);
+			walkingAnimation.SetBool("running_none", true);
+		}
 
 		if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J))
         {
@@ -409,7 +418,6 @@ public class PlayerMovementFluid : MonoBehaviour
 		//scale.x *= -1;
 		//transform.localScale = scale;
 		transform.Rotate(0f, 180f, 0f);
-
 		IsFacingRight = !IsFacingRight;
 	}
     #endregion
@@ -531,8 +539,14 @@ public class PlayerMovementFluid : MonoBehaviour
     #region CHECK METHODS
     public void CheckDirectionToFace(bool isMovingRight)
 	{
-		if (isMovingRight != IsFacingRight)
+		if (isMovingRight != IsFacingRight) {
 			Turn();
+			walkingAnimation.SetBool("running_left", true);
+			walkingAnimation.SetBool("running_right", false);
+		} else {
+			walkingAnimation.SetBool("running_right", true);
+			walkingAnimation.SetBool("running_left", false);
+		}
 	}
 
     private bool CanJump()

@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform bulletTransform;
     public bool canFire;
+    public bool stopFire = false;
     private float timer;
     public float timeBetweenFiring;
     [SerializeField] private AudioSource ShootSoundEffect;
@@ -62,33 +63,35 @@ public class Shooting : MonoBehaviour
             }
         }
 
-
-        if(Input.GetMouseButton(0) && chargeTime < 2f && canFire)
-        {
-            isCharging = true;
-            if(isCharging == true)
+        if (canFire && !stopFire) {
+            if(Input.GetMouseButton(0) && chargeTime < 2f)
             {
-                chargeTime += Time.deltaTime * chargeSpeed;
+                isCharging = true;
+                if(isCharging == true)
+                {
+                    chargeTime += Time.deltaTime * chargeSpeed;
+                }
             }
+
+            else if(Input.GetMouseButton(0) && chargeTime >= 2f)
+            {
+                canFire = false;
+                ReleaseCharge();
+                rb.AddForce(rotation.normalized * -bigRecoilForce / 8, ForceMode2D.Impulse);
+
+                
+            }        
+
+            else if (Input.GetMouseButtonUp(0))
+            {
+                canFire = false;
+                chargeTime = 0;
+                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                ShootSoundEffect.Play();
+                rb.AddForce(rotation.normalized * -smallRecoilForce / 8, ForceMode2D.Impulse);
+            }     
         }
 
-        else if(Input.GetMouseButton(0) && chargeTime >= 2f && canFire)
-        {
-            canFire = false;
-            ReleaseCharge();
-            rb.AddForce(rotation.normalized * -bigRecoilForce / 8, ForceMode2D.Impulse);
-
-            
-        }        
-
-        else if (Input.GetMouseButtonUp(0) && canFire)
-        {
-            canFire = false;
-            chargeTime = 0;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-            ShootSoundEffect.Play();
-            rb.AddForce(rotation.normalized * -smallRecoilForce / 8, ForceMode2D.Impulse);
-        }     
 
 
    

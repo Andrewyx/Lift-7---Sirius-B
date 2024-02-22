@@ -50,6 +50,7 @@ public class PlayerLife : MonoBehaviour
             {
                 // if (DeathSound == null) Debug.LogError("Deathsound is null on " + gameObject.name);
                 //DeathSound.Play();
+                player.GetComponentInChildren<Shooting>().stopFire = true;
                 rb.bodyType = RigidbodyType2D.Static;
                 GetComponent<BoxCollider2D>().enabled = false;
                 anim.SetTrigger("dwarf_death");      

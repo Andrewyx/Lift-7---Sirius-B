@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
-            DeathSound.Play();
+            Instantiate(DeathSound, transform.position, Quaternion.identity);
             DestroyFunction();
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MoveToNextLevel : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int nextSceneLoad;
+    [SerializeField] private int nextSceneLoad;
 
     void Start()
     {
@@ -17,11 +17,7 @@ public class MoveToNextLevel : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex <= 4)
         {
             SceneManager.LoadScene(nextSceneLoad);
-
-            if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-            {
-                PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-            }
+            PlayerPrefs.SetInt("levelAt", nextSceneLoad-1);
         }
 
         

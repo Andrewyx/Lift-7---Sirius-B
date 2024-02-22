@@ -17,7 +17,7 @@ public class Depth : MonoBehaviour
     public bool hasLimit;
     public float depthLimit;
 
-    public MoveToNextLevel moveToNextLevel;
+    private MoveToNextLevel moveToNextLevel;
     
     void Start()
     {
@@ -28,7 +28,7 @@ public class Depth : MonoBehaviour
     {
         currentDepth = countDown ? currentDepth -= countSpeed : currentDepth += countSpeed;
 
-        if (hasLimit && ((countDown && currentDepth <= depthLimit) || (!countDown && currentDepth >= depthLimit)))
+        if (hasLimit && ((countDown && currentDepth <= depthLimit)))
         {
             currentDepth = depthLimit;
             SetDepthText();
